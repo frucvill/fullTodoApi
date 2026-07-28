@@ -40,6 +40,7 @@ Para compilar las imágenes y dejar corriendo todos los contenedores en segundo 
 ```bash
 docker compose up --build -d
 
+
 ## 💻 Sobre el Frontend (Vue.js)
 * **Instalación de dependencias:** Al igual que el backend, el `npm install` del frontend se ejecuta automáticamente dentro de su contenedor al compilar con Docker.
 * **Modo de desarrollo / producción:** El Dockerfile del frontend está preparado para compilar y servir la aplicación de Vue a través de los puertos mapeados.
