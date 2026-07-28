@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build:
@@ -18,6 +16,32 @@ services:
       - MONGO_PORT=27017
       - MONGO_DB_NAME=todo-db
       - MONGO_URI=mongodb://mongo-db:27017/todo-db
+    depends_on:
+      - mongo-db
+    networks:
+      - todoProyect
+    restart: always
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - todoProyect
+    restart: always
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo-db
+      - ME_CONFIG_MONGODB_PORT=27017
+    depends_on:
+      - mongo-db
     networks:
       - todoProyect
     restart: always
@@ -36,6 +60,9 @@ services:
     networks:
       - todoProyect
     restart: always
+
+volumes:
+  mongo_data:
 
 networks:
   todoProyect:

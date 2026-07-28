@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import nestLogo from '@/assets/Nest.js.svg';
 </script>
 <template>

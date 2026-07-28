@@ -35,12 +35,12 @@
 </template>
 
 <script setup lang="ts">
-import TechStack from '@/components/home/TechStack.vue'
-import TechFeatures from '@/components/home/TechFeatures.vue'
+import TechStack from '@/components/home/TechStack.vue';
+import TechFeatures from '@/components/home/TechFeatures.vue';
 </script>
 
 <style scoped>
-.sub-banner {
+.sub-banner { 
   background-color: rgba(0, 0, 0, 0.04);
   color: #555;
   display: inline-block;
